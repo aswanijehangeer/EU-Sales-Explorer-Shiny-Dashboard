@@ -8,7 +8,7 @@ The European Sales Dashboard is a Shiny web application for visualizing and anal
 - View total sales, total profit, and the number of customers in real-time.
 - Explore interactive ECharts visualizations for deeper insights.
 
-![Dashboard Home Page](images/European_Sales_Dashboard.png)
+![Dashboard Home Page](images/European_shiny_dashboard.png)
 
 Access the dashboard in your web browser at [Sales Dashboard](https://aswanijahangeer.shinyapps.io/european-sales-dashboard/).
 
