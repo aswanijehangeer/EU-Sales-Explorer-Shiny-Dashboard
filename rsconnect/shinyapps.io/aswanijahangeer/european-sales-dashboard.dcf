@@ -5,7 +5,7 @@ account: aswanijahangeer
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10297567
-bundleId: 7846747
+bundleId: 7846952
 url: https://aswanijahangeer.shinyapps.io/european-sales-dashboard/
 version: 1
 asMultiple: FALSE
