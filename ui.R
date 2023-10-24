@@ -1,12 +1,13 @@
-source("global.R")
-
 ui <- page_sidebar(
-   # title
+  # include SCSS file
+  tags$head(
+    tags$style(sass(sass_file("www/style.scss")))
+  ),
+  # Title ----
   title = "European Sales Dashboard",
-  # theme
+  # Theme ----
   theme = bs_theme(bootswatch = "shiny"),
-  
-  # sidebar / input controls
+  # Sidebar / input controls ----
   sidebar = sidebar(
     title = "Input Controls",
     pickerInput(
@@ -42,44 +43,45 @@ ui <- page_sidebar(
         liveSearch = TRUE)
     )
   ),
-  # value boxes
-    layout_columns(
-      fill = FALSE,
-        value_box(
-        title = "SALES",
-        value = textOutput("total_profit"),
-        showcase = bsicons::bs_icon("currency-dollar"),
-        class = "left-box"),
-
-        value_box(
-        title = "PROFIT",
-        value = textOutput("total_sales"),
-        showcase = bsicons::bs_icon("currency-dollar"),
-        class = "middle-box"),
-
-        value_box(
+  # Value boxes ----
+  layout_columns(
+    fill = FALSE,
+    value_box(
+      title = "SALES",
+      value = textOutput("total_profit"),
+      showcase = bsicons::bs_icon("currency-dollar")),
+    
+    value_box(
+      title = "PROFIT",
+      value = textOutput("total_sales"),
+      showcase = bsicons::bs_icon("currency-dollar")),
+      
+      value_box(
         title = "# OF CUSTOMERS",
         value = textOutput("total_customers"),
-        showcase = bsicons::bs_icon("people-fill"),
-        class = "right-box")
-      ),
-  
-  # main section
-  layout_columns(
-    # Plot - 1
-    card(
-      card_header("Plot"),
-      echarts4rOutput("plot1")
+        showcase = bsicons::bs_icon("people-fill"))
     ),
-    # Plot -2
+  # Main section ----
+  layout_columns(
+    # Monthly Sales plot ----
     card(
-      card_header("Plot"),
-      echarts4rOutput("plot2")
+      full_screen = TRUE,
+      card_header("Monthly Sales Trend"),
+      echarts4rOutput("monthly_sales"),
+    ),
+    # Product Sales plot ----
+    card(
+      full_screen = TRUE,
+      card_header("Sales Breakdown by Product"),
+      echarts4rOutput("product_sales"),
     )
   ),
-  # Plot - 3 Heat-map
+  # Heat-map
   card(
-    card_header("Heat-map"),
-    echarts4rOutput("plot3")
-  )
+    full_screen = TRUE,
+    card_header("The Number of Orders by Months and Years"),
+    echarts4rOutput("heat_map")
+  ),
+  # Disconnect message on disconnection on App ----
+  disconnectMessage()
 )
