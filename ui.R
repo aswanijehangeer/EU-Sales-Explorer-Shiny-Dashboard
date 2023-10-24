@@ -48,12 +48,12 @@ ui <- page_sidebar(
     fill = FALSE,
     value_box(
       title = "SALES",
-      value = textOutput("total_profit"),
+      value = textOutput("total_sales"),
       showcase = bsicons::bs_icon("currency-dollar")),
     
     value_box(
       title = "PROFIT",
-      value = textOutput("total_sales"),
+      value = textOutput("total_profit"),
       showcase = bsicons::bs_icon("currency-dollar")),
       
       value_box(
