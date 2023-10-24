@@ -77,6 +77,6 @@ sales_data <- sales_data |>
 # 
 # sales <- sum(sales_data$Sales)
 # 
-# # Total Profit 
+# # Total Profit
 # profit <- sum(sales_data$Profit)
 
