@@ -59,13 +59,18 @@ server <- function(input, output, session) {
   # total sales
   total_sales <- reactive({
     filtered_data <- filtered_data()
-    sum(filtered_data$Sales)
+    total_sales <- sum(filtered_data$Sales)
+    
+    total_sales <- format(total_sales, big.mark = ",")
+    
   })
 
   # total profit
   total_profit <- reactive({
     filtered_data <- filtered_data()
-    sum(filtered_data$Profit)
+    total_profit <- sum(filtered_data$Profit)
+    
+    total_profit <- format(total_profit, big.mark = ",")
   })
 
   # Rendering the value boxes ----
