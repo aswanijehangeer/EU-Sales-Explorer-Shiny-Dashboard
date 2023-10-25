@@ -2,6 +2,7 @@
 
 library(tidyverse)
 library(readxl)
+library(scales)
 
 library(shiny)
 library(bslib)
