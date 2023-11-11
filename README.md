@@ -7,6 +7,7 @@ The European Sales Dashboard is a Shiny web application for visualizing and anal
 <br>
 <br>
 <br>
+
 ## Features
 
 - Filter data by product category, region, year, and country.
