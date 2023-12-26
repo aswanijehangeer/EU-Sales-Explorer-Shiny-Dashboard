@@ -1,4 +1,4 @@
-# European Sales Dashboard
+# EU Sales Explorer: Dynamic Shiny Dashboard
 
 <img src="images/sales-dashbaord.png" width="170" height="200" align="right"/>
 
